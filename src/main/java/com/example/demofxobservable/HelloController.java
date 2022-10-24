@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -29,6 +30,10 @@ public class HelloController implements Initializable {
     private Button btnAccion;
     @FXML
     private Button btnAccion2;
+    @FXML
+    private StackPane boxStackPane;
+    @FXML
+    private Button btnAddBox;
 
 
     @Override
@@ -44,17 +49,13 @@ public class HelloController implements Initializable {
         }
     }
 
-    public void actualizaMenu() throws IOException {
+    public void actualizaMenu(VBox vBoxSubMenu) throws IOException {
 
-        //menuModel.eliminaMenus();
-        //this.vboxContenidos = new VBox();
-        //this.vboxContenidos = (VBox) vboxContenidos.getChildren();
-        //FXMLLoader fxlMenuDos = new FXMLLoader(HelloApplication.class.getResource("menuDos.fxml"));
-        //VBox vBoxMenuDos = fxlMenuDos.load();
-
-        vboxContenidos.getChildren().removeAll(vboxContenidos);
-//        vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
-//        vboxContenidos.getChildren().add(vBoxMenuDos);
+        vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
+        vboxContenidos.getChildren().add(vBoxSubMenu);
+    }
+   public void eliminaMenu() throws IOException {
+        vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
     }
 
     @FXML
@@ -69,5 +70,15 @@ public class HelloController implements Initializable {
         VBox vBoxMenuDos = fxlMenuDos.load();
         vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
         vboxContenidos.getChildren().add(vBoxMenuDos);
+    }
+
+    @FXML
+    public void btnAddBoxClick(ActionEvent actionEvent) throws IOException {
+
+        FXMLLoader fxlMenuDos = new FXMLLoader(HelloApplication.class.getResource("menuDos.fxml"));
+        VBox vBoxMenuDos = fxlMenuDos.load();
+
+        boxStackPane.getChildren().removeAll(boxStackPane.getChildren());
+        boxStackPane.getChildren().add(vBoxMenuDos);
     }
 }

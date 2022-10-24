@@ -34,6 +34,6 @@ public class MenuDosController {
         Parent rootHello = fxmlLoaderHello.load();
         HelloController helloController = fxmlLoaderHello.getController();
 
-        helloController.actualizaMenu();
+        helloController.actualizaMenu(vBox);
     }
 }
