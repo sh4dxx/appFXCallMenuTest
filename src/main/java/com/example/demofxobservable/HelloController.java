@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -34,51 +35,50 @@ public class HelloController implements Initializable {
     private StackPane boxStackPane;
     @FXML
     private Button btnAddBox;
+    @FXML
+    private Label welcomeText1;
+    @FXML
+    private Button btnMenuVolver;
+    @FXML
+    private Label welcomeText;
+    @FXML
+    private VBox vBoxMenuDos;
+    @FXML
+    private VBox vBoxMenuUno;
+    @FXML
+    private Button btnMenuDos;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("menuUno.fxml"));
-            VBox vBoxUno = fxmlLoader.load();
-            vboxContenidos.getChildren().add(vBoxUno);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void actualizaMenu(VBox vBoxSubMenu) throws IOException {
-
-        vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
-        vboxContenidos.getChildren().add(vBoxSubMenu);
-    }
-   public void eliminaMenu() throws IOException {
-        vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
+        vBoxMenuUno.setVisible(true);
+        vBoxMenuDos.setVisible(false);
     }
 
     @FXML
     public void btnAccionClick(ActionEvent actionEvent) {
-        vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
+
     }
 
     @FXML
     public void btnAccion2Click(ActionEvent actionEvent) throws IOException {
 
-        FXMLLoader fxlMenuDos = new FXMLLoader(HelloApplication.class.getResource("menuDos.fxml"));
-        VBox vBoxMenuDos = fxlMenuDos.load();
-        vboxContenidos.getChildren().removeAll(vboxContenidos.getChildren());
-        vboxContenidos.getChildren().add(vBoxMenuDos);
     }
 
     @FXML
     public void btnAddBoxClick(ActionEvent actionEvent) throws IOException {
 
-        FXMLLoader fxlMenuDos = new FXMLLoader(HelloApplication.class.getResource("menuDos.fxml"));
-        VBox vBoxMenuDos = fxlMenuDos.load();
+    }
 
-        boxStackPane.getChildren().removeAll(boxStackPane.getChildren());
-        boxStackPane.getChildren().add(vBoxMenuDos);
+    @FXML
+    public void btnMenuDosClick(ActionEvent actionEvent) {
+         vBoxMenuUno.setVisible(false);
+         vBoxMenuDos.setVisible(true);
+    }
+
+    @FXML
+    public void btnVolverMenuUnoClick(ActionEvent actionEvent) {
+        vBoxMenuDos.setVisible(false);
+        vBoxMenuUno.setVisible(true);
     }
 }

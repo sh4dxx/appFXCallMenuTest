@@ -39,21 +39,21 @@ public class MenuUnoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("inicio");
-
-        btnMenuOpciones.setOnMouseClicked(mouseEvent -> {
-
-            try {
-
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-                Parent root = fxmlLoader.load();
-                HelloController helloController = fxmlLoader.getController();
-                helloController.eliminaMenu();
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-        });
+//
+//        btnMenuOpciones.setOnMouseClicked(mouseEvent -> {
+//
+//            try {
+//
+//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+//                Parent root = fxmlLoader.load();
+//                HelloController helloController = fxmlLoader.getController();
+//                helloController.eliminaMenu();
+//
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//
+//        });
 
 
     }

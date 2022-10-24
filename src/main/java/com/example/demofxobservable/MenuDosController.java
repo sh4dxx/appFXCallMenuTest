@@ -21,19 +21,19 @@ public class MenuDosController {
     @javafx.fxml.FXML
     public void btnMenuVolverClick(ActionEvent actionEvent) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("menuUno.fxml"));
-        Parent root = fxmlLoader.load();
-        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        VBox vBox = (VBox) ((Node) actionEvent.getSource()).getClip();
-
-        //Scene scene = new Scene(root);
-        //stage.setScene(scene);
-        //stage.show();
-
-        FXMLLoader fxmlLoaderHello = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Parent rootHello = fxmlLoaderHello.load();
-        HelloController helloController = fxmlLoaderHello.getController();
-
-        helloController.actualizaMenu(vBox);
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("menuUno.fxml"));
+//        Parent root = fxmlLoader.load();
+//        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+//        VBox vBox = (VBox) ((Node) actionEvent.getSource()).getClip();
+//
+//        //Scene scene = new Scene(root);
+//        //stage.setScene(scene);
+//        //stage.show();
+//
+//        FXMLLoader fxmlLoaderHello = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+//        Parent rootHello = fxmlLoaderHello.load();
+//        HelloController helloController = fxmlLoaderHello.getController();
+//
+//        helloController.actualizaMenu(vBox);
     }
 }
